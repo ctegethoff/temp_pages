@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Detail - Chris Tegethoff</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Montserrat -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
+    <script>
+        // Custom configuration for Tailwind
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'montserrat': ['Montserrat', 'sans-serif'],
+                    },
+                    maxWidth: {
+                        '8xl': '1440px',
+                    },
+                    keyframes: {
+                        scrollLeft: {
+                            '0%': { transform: 'translateX(100vw)' },
+                            '100%': { transform: 'translateX(-100%)' },
+                        }
+                    },
+                    animation: {
+                        'scroll-left': 'scrollLeft linear infinite',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 300;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            background-color: #ffffff;
+        }
+        #better-story-image, #ux-design-thinking-image, #solution-text-image {
+            transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+        /* Only apply hover effect on devices that support it */
+        @media (hover: hover) {
+            #ux-design-thinking-image:hover {
+                transform: scale(1.15);
+            }
+            #better-story-image:hover {
+                 transform: scale(1.25);
+            }
+             #solution-text-image:hover {
+                transform: scale(1.15);
+            }
+        }
+        /* Styles for scroll-reveal animation */
+        .reveal-section {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        .reveal-section.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        /* New Carousel Styles */
+        .solution-carousel-slide .text-overlay {
+            opacity: 0;
+            transform: translateY(10px);
+            transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+        }
+        #solution-carousel-container.is-in-view .solution-carousel-slide.active .text-overlay {
+            opacity: 1;
+            transform: translateY(0);
+            transition-delay: 0.5s;
+        }
+    </style>
+</head>
+<body class="bg-white">
+
+    <div class="w-full">
+        <!-- Black Header Bar -->
+        <header class="sticky top-0 h-20 w-full bg-black z-50">
+            <div class="max-w-8xl mx-auto h-full flex items-center px-8 md:px-16">
+                <!-- Back Arrow -->
+                <a href="index.html" class="text-white hover:opacity-75 transition-opacity" aria-label="Back to Home">
+                    <svg width="26" height="52" viewBox="0 0 26 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M25 51L1 26L25 1" stroke="currentColor" stroke-width="2"/>
+                    </svg>
+                </a>
+            </div>
+        </header>
+
+        <!-- Panel 1_header_image -->
+        <section class="relative w-full z-10">
+            <div class="max-w-8xl mx-auto">
+                <img src="https://res.cloudinary.com/dlbnlilfj/image/upload/v1749755138/GPG_FTUX_Container_qfrlpy.webp" alt="Project Header" class="w-full h-auto">
+            </div>
+        </section>
+
+        <!-- Panel 2_lead_in_image -->
+        <section id="static-image-section" class="relative h-96 w-full overflow-hidden">
+            <div class="max-w-8xl mx-auto h-full relative">
+                <img id="static-image" src="https://res.cloudinary.com/dlbnlilfj/image/upload/v1749751782/research_engagment_design_aq6msr.webp" alt="Static background" class="absolute left-0 top-0 w-full h-full object-cover">
+                <div class="absolute inset-0 z-10 flex items-center justify-center p-8 bg-black/20">
+                     <img id="ux-design-thinking-image" src="https://res.cloudinary.com/dlbnlilfj/image/upload/v1749753783/ux_design_thinking_ca0f5k.svg" alt="UX Design Thinking" class="w-full max-w-4xl h-auto">
+                </div>
+            </div>
+        </section>
+
+        <!-- Main Content Wrapper -->
+        <div class="max-w-8xl mx-auto">
+            <!-- Panel 3_intro_text -->
+            <section class="min-h-[260px] flex items-center justify-center p-8">
+                <p class="text-xl md:text-2xl font-light text-center max-w-3xl text-gray-800 leading-relaxed">
+                    Are we losing opportunities to convert gamers into day-one players if we are failing to present a compelling narrative that Google Play Games for PC has something to offer them?
+                </p>
+            </section>
+            
+            <!-- Panel 4_problem_video -->
+            <section id="problem-video-section" class="relative h-[240px] sm:h-[360px] w-full overflow-hidden">
+                 <video id="problem-video" muted playsinline class="w-full h-full object-cover">
+                    <source src="https://res.cloudinary.com/dlbnlilfj/video/upload/v1749754596/current_mtljov.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </section>
+            
+            <!-- Panel 5_problem_text -->
+            <section class="min-h-[260px] flex items-center justify-center p-8">
+                <p class="text-xl md:text-2xl font-light text-center max-w-3xl text-gray-800 leading-relaxed">
+                    The current first time user experience for Google Play Games has become dated, unresponsive, and lacks signs of life. The FTUX fails to communicate the platform’s unique value to new users.
+                </p>
+            </section>
+            
+            <!-- Panel 6_insiration_graphic -->
+            <section class="relative h-[360px] w-full bg-white overflow-hidden">
+                <!-- Animating Clouds (Background) -->
+                <img src="https://res.cloudinary.com/dlbnlilfj/image/upload/v1749757108/cloud_1_xlv6lo.webp" alt="Cloud" class="absolute top-10 w-32 md:w-48 animate-scroll-left" style="animation-duration: 25s;">
+                <img src="https://res.cloudinary.com/dlbnlilfj/image/upload/v1749757107/cloud_2_zcwdjx.webp" alt="Cloud" class="absolute top-24 w-48 md:w-64 animate-scroll-left" style="animation-duration: 35s; animation-delay: -5s;">
+                <img src="https://res.cloudinary.com/dlbnlilfj/image/upload/v1749757106/cloud_3_lsgwpp.webp" alt="Cloud" class="absolute bottom-12 w-40 md:w-56 animate-scroll-left" style="animation-duration: 30s; animation-delay: -10s;">
+                <img src="https://res.cloudinary.com/dlbnlilfj/image/upload/v1749757106/cloud_4_pwlkgw.webp" alt="Cloud" class="absolute bottom-20 right-20 w-32 md:w-40 animate-scroll-left" style="animation-duration: 40s; animation-delay: -15s;">
+                <!-- Centered Foreground Image -->
+                <div class="absolute inset-0 flex items-center justify-center p-8">
+                    <img id="better-story-image" src="https://res.cloudinary.com/dlbnlilfj/image/upload/v1749757108/better_story_text_iehux4.webp" alt="A Better Story" class="relative z-10 max-w-md md:max-w-lg w-full h-auto">
+                </div>
+            </section>
+
+             <!-- Panel 7_layers_illustrated_video_and_text -->
+            <section class="min-h-[460px] w-full flex flex-col-reverse md:flex-row">
+                <div class="w-full md:w-1/2 flex items-center justify-center p-8 md:p-16">
+                     <ul class="space-y-4">
+                        <li class="text-xl text-gray-700">· Top layer showcases gameplay w sound</li>
+                        <li class="text-xl text-gray-700">· UI layer showcases gameplay on hover</li>
+                        <li class="text-xl text-gray-700">· Background video showcases gameplay</li>
+                        <li class="text-xl text-gray-700">· Ambient gameplay layer, lets you play it</li>
+                    </ul>
+                </div>
+                <div class="w-full md:w-1/2 flex items-center justify-center p-8">
+                    <video id="layers-video" muted playsinline class="max-h-full w-auto object-contain">
+                        <source src="https://res.cloudinary.com/dlbnlilfj/video/upload/v1749757853/layers_light_ioapsr.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+            </section>
+        
+            <!-- Panel 8_engagment_levels_graphics -->
+            <section class="pt-16">
+                <div class="flex flex-col items-center">
+                    <div class="w-full"><img src="https://res.cloudinary.com/dlbnlilfj/image/upload/v1749761534/ux_engagment_level_1_az4fic.svg" alt="UX Engagement Level 1" class="w-full h-auto"></div>
+                    <div class="reveal-section w-full"><img src="https://res.cloudinary.com/dlbnlilfj/image/upload/v1749761539/ux_engagment_level_2_uowapr.svg" alt="UX Engagement Level 2" class="w-full h-auto"></div>
+                    <div class="reveal-section w-full"><img src="https://res.cloudinary.com/dlbnlilfj/image/upload/v1749761538/ux_engagment_level_3_brbqdu.svg" alt="UX Engagement Level 3" class="w-full h-auto"></div>
+                    <div class="reveal-section w-full"><img src="https://res.cloudinary.com/dlbnlilfj/image/upload/v1749761537/ux_engagment_level_4_de0amt.svg" alt="UX Engagement Level 4" class="w-full h-auto"></div>
+                    <div class="reveal-section w-full"><img src="https://res.cloudinary.com/dlbnlilfj/image/upload/v1749761536/ux_engagment_level_5_dxqpsx.svg" alt="UX Engagement Level 5" class="w-full h-auto"></div>
+                    <div class="reveal-section w-full"><img src="https://res.cloudinary.com/dlbnlilfj/image/upload/v1749761535/ux_engagment_level_6_sk08xg.svg" alt="UX Engagement Level 6" class="w-full h-auto"></div>
+                    <div class="reveal-section w-full"><img src="https://res.cloudinary.com/dlbnlilfj/image/upload/v1749761535/ux_engagment_level_7_k3qhj1.svg" alt="UX Engagement Level 7" class="w-full h-auto"></div>
+                </div>
+            </section>
+            
+            <!-- Panel 9_engagement_solution_txt -->
+            <section class="min-h-[260px] flex items-center justify-center p-8">
+                <p class="text-xl md:text-2xl font-light text-center max-w-3xl text-gray-800 leading-relaxed">
+                    As users progress down the page, we reduce barriers to gameplay, such as the need to install or purchase a game.
+                </p>
+            </section>
+
+            <!-- Panel 10_solution_carousel -->
+            <section id="solution-carousel-container" class="relative overflow-hidden cursor-pointer">
+                <div id="solution-carousel" class="flex transition-transform duration-500 ease-in-out">
+                    <!-- Carousel Slide 1 -->
+                    <div class="solution-carousel-slide w-full flex-shrink-0 relative">
+                        <img src="https://res.cloudinary.com/dlbnlilfj/image/upload/v1749836232/ux_interaction_design01_glxty2.webp" class="w-full h-auto">
+                        <div class="text-overlay absolute bottom-10 left-10 bg-white text-gray-800 p-8 max-w-md">
+                            <h3 class="text-2xl font-bold mb-2">Empathy & Storytelling</h3>
+                            <p class="text-gray-600">Establishes Google Play for PC as a trusted part of the Google Play ecosystem by tying key value propositions to games that deliver on the cross-platform promise.</p>
+                        </div>
+                    </div>
+                    <!-- Carousel Slide 2 -->
+                    <div class="solution-carousel-slide w-full flex-shrink-0 relative">
+                        <img src="https://res.cloudinary.com/dlbnlilfj/image/upload/v1749836232/ux_interaction_design02_i4czua.webp" class="w-full h-auto">
+                         <div class="text-overlay absolute bottom-10 left-10 bg-white text-gray-800 p-8 max-w-md">
+                            <h3 class="text-2xl font-bold mb-2">Continuity & Engagement</h3>
+                            <p class="text-gray-600">Prominently features games that the user is already playing on mobile.</p>
+                        </div>
+                    </div>
+                    <!-- Carousel Slide 3 -->
+                     <div class="solution-carousel-slide w-full flex-shrink-0 relative">
+                        <img src="https://res.cloudinary.com/dlbnlilfj/image/upload/v1749836232/ux_interaction_design03_pzu9wf.webp" class="w-full h-auto">
+                         <div class="text-overlay absolute bottom-10 left-10 bg-white text-gray-800 p-8 max-w-md">
+                            <h3 class="text-2xl font-bold mb-2">Monetization & Brand Positioning</h3>
+                            <p class="text-gray-600">Driving cross platform engagement by helping gamers see that they can earn and use Play Points on the PC platform. Encourage gamers to discover perks and other Play loyalty incentives.</p>
+                        </div>
+                    </div>
+                    <!-- Carousel Slide 4 -->
+                    <div class="solution-carousel-slide w-full flex-shrink-0 relative">
+                        <img src="https://res.cloudinary.com/dlbnlilfj/image/upload/v1749836232/ux_interaction_design04_gbffon.webp" class="w-full h-auto">
+                         <div class="text-overlay absolute bottom-10 left-10 bg-white text-gray-800 p-8 max-w-md">
+                            <h3 class="text-2xl font-bold mb-2">AI Personalization</h3>
+                            <p class="text-gray-600">Personalizes curated content highlights fewer, more relevant games which suggests quality, not quantity.</p>
+                        </div>
+                    </div>
+                    <!-- Carousel Slide 5 -->
+                    <div class="solution-carousel-slide w-full flex-shrink-0 relative">
+                        <img src="https://res.cloudinary.com/dlbnlilfj/image/upload/v1749836232/ux_interaction_design05_xlbl3x.webp" class="w-full h-auto">
+                         <div class="text-overlay absolute bottom-10 left-10 bg-white text-gray-800 p-8 max-w-md">
+                            <h3 class="text-2xl font-bold mb-2">Strategic Partnerships</h3>
+                            <p class="text-gray-600">Developer Spotlight incentivizes studios to release more titles on our platform by guaranteeing more visibility.</p>
+                        </div>
+                    </div>
+                    <!-- Carousel Slide 6 -->
+                    <div class="solution-carousel-slide w-full flex-shrink-0 relative">
+                        <img src="https://res.cloudinary.com/dlbnlilfj/image/upload/v1749836232/ux_interaction_design06_ndaawl.webp" class="w-full h-auto">
+                         <div class="text-overlay absolute bottom-10 left-10 bg-white text-gray-800 p-8 max-w-md">
+                            <h3 class="text-2xl font-bold mb-2">Engagment & Monetization</h3>
+                            <p class="text-gray-600">Allow Google Play to monetize from Google Gamesnacks & IP.</p>
+                        </div>
+                    </div>
+                    <!-- Carousel Slide 7 -->
+                    <div class="solution-carousel-slide w-full flex-shrink-0 relative">
+                        <img src="https://res.cloudinary.com/dlbnlilfj/image/upload/v1749836232/ux_interaction_design07_dmentv.webp" class="w-full h-auto">
+                         <div class="text-overlay absolute bottom-10 left-10 bg-white text-gray-800 p-8 max-w-md">
+                            <h3 class="text-2xl font-bold mb-2">Moments of delight</h3>
+                            <p class="text-gray-600">Play in place games emphasize no barrier to gameplay and immediate engagement.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Carousel Dots -->
+                <div id="solution-carousel-dots" class="absolute bottom-4 left-1/2 -translate-x-1/2 flex space-x-2"></div>
+            </section>
+            
+             <!-- Panel 11_under_carousel_txt -->
+            <section class="min-h-[260px] flex items-center justify-center p-8">
+                <p class="text-xl md:text-2xl font-light text-center max-w-3xl text-gray-800 leading-relaxed">
+                   Create a share-worthy FTUX for Google Play Games on PC that showcases the platform's unique value, boosts loyalty, highlights performance on larger screens, and makes it effortless to discover games to fall in love with.
+                </p>
+            </section>
+            
+            <!-- Panel 12_prototype_walkthrough -->
+            <section>
+                <div class="relative cursor-pointer" id="click-to-play-container">
+                    <video id="main-video" class="w-full h-auto" poster="https://res.cloudinary.com/dlbnlilfj/image/upload/v1749769386/movie_still_ves476.webp" preload="metadata">
+                        <source src="https://res.cloudinary.com/dlbnlilfj/video/upload/v1749766775/Best_UX_in_enviroment_umrm0w.mp4" type="video/mp4">
+                    </video>
+                    <div id="play-button-overlay" class="absolute inset-0 flex items-center justify-center bg-black/30 transition-opacity">
+                        <svg class="w-24 h-24 text-white opacity-80" viewBox="0 0 24 24" fill="currentColor"><path d="M6.3,2.8L17.5,10c1.1,0.7,1.1,2.4,0,3.1L6.3,21.2c-1.2,0.8-2.8-0.1-2.8-1.5V4.3C3.5,2.9,5,2,6.3,2.8z"/></svg>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Panel 13_under_prototype_txt -->
+            <section class="min-h-[260px] flex items-center justify-center p-8">
+                <p class="text-xl md:text-2xl font-light text-center max-w-3xl text-gray-800 leading-relaxed">
+                   Projected 5% boost in monthly active users by immediately engaging gamers through a strategic mix of branding, education, personalization, frictionless play, and interactivity.
+                </p>
+            </section>
+        </div>
+        
+        <!-- Panel 14_solution_image -->
+        <section class="relative h-96 w-full overflow-hidden">
+            <div class="max-w-8xl mx-auto h-full relative">
+                <img src="https://res.cloudinary.com/dlbnlilfj/image/upload/v1749769731/research_engagment_UX_design2_dsp0fg.webp" alt="UX Design" class="absolute left-0 top-0 w-full h-full object-cover">
+                <div class="absolute inset-0 z-10 flex items-center justify-center p-8 image-wrapper">
+                     <img id="solution-text-image" src="https://res.cloudinary.com/dlbnlilfj/image/upload/v1749769812/5_Lift_in_MAUs_sga5zf.svg" alt="5% Lift in MAUs" class="w-full max-w-5xl h-auto">
+                </div>
+            </div>
+        </section>
+
+        <!-- Bottom Black Bar -->
+        <footer class="relative h-20 w-full bg-black"></footer>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Hover-to-play video logic for Panel 4
+            const problemVideoSection = document.getElementById('problem-video-section');
+            const problemVideo = document.getElementById('problem-video');
+            
+            if (problemVideoSection && problemVideo) {
+                if (window.matchMedia("(hover: hover)").matches) {
+                    problemVideoSection.addEventListener('mouseenter', () => { problemVideo.play(); });
+                    problemVideoSection.addEventListener('mouseleave', () => { problemVideo.pause(); problemVideo.currentTime = 0; });
+                }
+            }
+
+            // Scroll-to-play logic for Panel 7 video
+            const layersVideo = document.getElementById('layers-video');
+            if (layersVideo) {
+                let hasPlayed = false;
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting && !hasPlayed) {
+                            entry.target.play(); hasPlayed = true; 
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, { threshold: 0.8 }); 
+
+                observer.observe(layersVideo);
+            }
+
+            // Scroll-reveal logic for engagement levels
+            const revealSections = document.querySelectorAll('.reveal-section');
+            const revealObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1 });
+            revealSections.forEach(section => { revealObserver.observe(section); });
+
+            // Click-to-play video logic
+            const videoContainer = document.getElementById('click-to-play-container');
+            const mainVideo = document.getElementById('main-video');
+            const playButton = document.getElementById('play-button-overlay');
+            
+            if (videoContainer && mainVideo && playButton) {
+                videoContainer.addEventListener('click', () => {
+                    if (mainVideo.paused) {
+                        mainVideo.play();
+                    } else {
+                        mainVideo.pause();
+                    }
+                });
+                mainVideo.addEventListener('play', () => { playButton.style.opacity = '0'; });
+                mainVideo.addEventListener('pause', () => { playButton.style.opacity = '1'; });
+                mainVideo.addEventListener('ended', () => { playButton.style.opacity = '1'; });
+            }
+
+            // One-time hover scale effect for the "A Better Story" image
+            const storyImage = document.getElementById('better-story-image');
+            if(storyImage && window.matchMedia('(hover: hover)').matches) {
+                storyImage.addEventListener('mouseenter', () => {
+                    storyImage.style.transform = 'scale(1.25)';
+                }, { once: true });
+            }
+
+            // New Carousel Logic
+            const solutionCarouselContainer = document.getElementById('solution-carousel-container');
+            const solutionCarousel = document.getElementById('solution-carousel');
+            const solutionSlides = document.querySelectorAll('.solution-carousel-slide');
+            const dotsContainer = document.getElementById('solution-carousel-dots');
+            let currentSlide = 0;
+            const totalSlides = solutionSlides.length;
+            
+            if(solutionCarousel && totalSlides > 0) {
+                // Create dots
+                for (let i = 0; i < totalSlides; i++) {
+                    const dot = document.createElement('button');
+                    dot.classList.add('w-2', 'h-2', 'rounded-full', 'transition-colors');
+                    dot.addEventListener('click', (e) => {
+                        e.stopPropagation();
+                        showSlide(i);
+                    });
+                    dotsContainer.appendChild(dot);
+                }
+                const dots = dotsContainer.children;
+
+                const showSlide = (index) => {
+                    solutionSlides.forEach(slide => slide.classList.remove('active'));
+                    solutionSlides[index].classList.add('active');
+                    
+                    solutionCarousel.style.transform = `translateX(-${index * 100}%)`;
+                    
+                    for (let i = 0; i < dots.length; i++) {
+                        dots[i].classList.toggle('bg-white', i === index);
+                        dots[i].classList.toggle('bg-white/40', i !== index);
+                    }
+                    currentSlide = index;
+                };
+
+                const nextSlide = () => showSlide((currentSlide + 1) % totalSlides);
+                const prevSlide = () => showSlide((currentSlide - 1 + totalSlides) % totalSlides);
+
+                solutionCarouselContainer.addEventListener('click', (e) => {
+                    const rect = solutionCarouselContainer.getBoundingClientRect();
+                    const clickX = e.clientX - rect.left;
+                    if (clickX > rect.width / 2) {
+                        nextSlide();
+                    } else {
+                        prevSlide();
+                    }
+                });
+                
+                // Initial animation
+                const carouselObserver = new IntersectionObserver((entries, observer) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            solutionCarouselContainer.classList.add('is-in-view');
+                            // Animate once
+                             setTimeout(() => {
+                               solutionCarousel.style.transform = 'translateX(-10px)';
+                               setTimeout(() => {
+                                   solutionCarousel.style.transform = 'translateX(0)';
+                               }, 300);
+                            }, 500);
+                            observer.unobserve(solutionCarouselContainer);
+                        }
+                    });
+                }, { threshold: 0.2 });
+
+                carouselObserver.observe(solutionCarouselContainer);
+
+                showSlide(0);
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roku Ad Platform - Chris Tegethoff</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
+    <script>
+        // Custom configuration for Tailwind
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'montserrat': ['Montserrat', 'sans-serif'],
+                    },
+                    maxWidth: {
+                        '8xl': '1440px',
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 300;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            background-color: #ffffff;
+        }
+        #problem-statement-graphic {
+            transition: transform 400ms cubic-bezier(0.68, -0.55, 0.27, 1.55);
+        }
+        @media (hover: hover) {
+            #problem-statement-graphic:hover {
+                transform: scale(1.25);
+            }
+        }
+        .carousel-slide {
+            transition: opacity 1s ease-in-out;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body class="bg-white">
+
+    <div class="w-full">
+        <header class="sticky top-0 h-20 w-full bg-black z-50">
+            <div class="max-w-8xl mx-auto h-full flex items-center px-8 md:px-16">
+                <a href="index.html" class="text-white hover:opacity-75 transition-opacity" aria-label="Back to Home">
+                    <svg width="26" height="52" viewBox="0 0 26 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M25 51L1 26L25 1" stroke="currentColor" stroke-width="2"/>
+                    </svg>
+                </a>
+            </div>
+        </header>
+
+        <main>
+            <!-- Panel 1_header_image -->
+            <section class="max-w-8xl mx-auto">
+                <img src="https://res.cloudinary.com/dlbnlilfj/image/upload/v1749923417/UX_design_monetization_ads_header_lgfemf.webp" alt="Roku Ad Platform Header" class="w-full h-auto">
+            </section>
+
+            <!-- Panel 2_video_panel -->
+            <section class="relative max-w-8xl mx-auto">
+                <video autoplay loop muted playsinline class="w-full h-auto">
+                    <source src="https://res.cloudinary.com/dlbnlilfj/video/upload/v1749923421/existing_roku_screensaver_gm4rao.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <div class="absolute inset-0 bg-black/50 flex justify-center items-start pt-14 p-8">
+                    <img id="problem-statement-graphic" src="https://res.cloudinary.com/dlbnlilfj/image/upload/v1749923418/problem_statement_sijhx3.svg" alt="Problem Statement" class="w-full max-w-4xl h-auto">
+                </div>
+            </section>
+        
+            <!-- Panel 3_brainstorming_graphic -->
+            <section class="w-full bg-black">
+                <div class="max-w-8xl mx-auto flex flex-col items-center justify-start gap-12 p-8 md:p-16 py-24">
+                    <div class="w-full flex justify-center">
+                         <img src="https://res.cloudinary.com/dlbnlilfj/image/upload/v1749925681/roku_ad_platform_brainstorming_e8qtqh.svg" alt="Brainstorming Graphic" class="w-full max-w-6xl h-auto">
+                    </div>
+                    <div class="w-full flex justify-center pt-8">
+                        <p class="text-xl md:text-2xl font-light text-white max-w-3xl leading-relaxed text-center">
+                            As a self-initiated project, I reimagined the screensaver as an interactive cityscape that blends entertainment seamlessly with ads. The design transformed a passive experience into a powerful ad platform.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <div class="max-w-8xl mx-auto">
+                <!-- Panel 4_imagine_text -->
+                <section class="py-12 px-8">
+                    <img src="https://res.cloudinary.com/dlbnlilfj/image/upload/v1749936713/imagine_text_vbyv1z.webp" alt="Imagine text" class="w-full max-w-5xl h-auto mx-auto">
+                </section>
+
+                <!-- Panel 5_imagine_description -->
+                <section class="py-12 px-8">
+                     <p class="text-xl md:text-2xl font-light text-center max-w-3xl text-gray-800 leading-relaxed mx-auto">
+                        Imagine a city where movies come to life in a vibrant world bursting with playful nods to entertainment.
+                    </p>
+                </section>
+            </div>
+        
+            <!-- Panel 6_inspiration_carousel -->
+            <section id="inspiration-section" class="relative w-full">
+                 <div id="inspiration-carousel" class="relative max-w-8xl mx-auto" style="aspect-ratio: 1440 / 925">
+                    <img src="https://res.cloudinary.com/dlbnlilfj/image/upload/v1749948532/screensaver_ux_process_01_ocnhma.webp" alt="Inspiration Image 1" class="carousel-slide absolute top-0 left-0 w-full h-full object-cover">
+                    <img src="https://res.cloudinary.com/dlbnlilfj/image/upload/v1749955723/screensaver_ux_process_02_o5n6wo.webp" alt="Inspiration Image 2" class="carousel-slide absolute top-0 left-0 w-full h-full object-cover opacity-0">
+                    <img src="https://res.cloudinary.com/dlbnlilfj/image/upload/v1749955738/screensaver_ux_process_03_qlrwmc.webp" alt="Inspiration Image 3" class="carousel-slide absolute top-0 left-0 w-full h-full object-cover opacity-0">
+                    <img src="https://res.cloudinary.com/dlbnlilfj/image/upload/v1749955750/screensaver_ux_process_04_tmnxnq.webp" alt="Inspiration Image 4" class="carousel-slide absolute top-0 left-0 w-full h-full object-cover opacity-0">
+                    <img src="https://res.cloudinary.com/dlbnlilfj/image/upload/v1749955763/screensaver_ux_process_05_wjixo0.webp" alt="Inspiration Image 5" class="carousel-slide absolute top-0 left-0 w-full h-full object-cover opacity-0">
+                </div>
+            </section>
+            
+            <div class="max-w-8xl mx-auto">
+                <!-- Panel 7_inspiration_text -->
+                <section class="py-12 px-8">
+                    <p class="text-xl md:text-2xl font-light text-center max-w-3xl text-gray-800 leading-relaxed mx-auto">
+                        I had a lot of fun drawing inspiration from my deep love for entertainment to conceptualize a universe of movie-themed references and easter eggs designed to grab viewers’ attention. Along the way, I solved some tough engineering challenges, learned a lot, and created value for Roku and its customers.
+                    </p>
+                </section>
+
+                <!-- Panel 8_diagrams -->
+                <section>
+                    <img src="https://res.cloudinary.com/dlbnlilfj/image/upload/v1750016047/diagrams_e1s4jh.svg" alt="Diagrams" class="w-full h-auto">
+                </section>
+                
+                <!-- Panel 9_initial_illustrations -->
+                <section id="initial-illustrations-section" class="relative w-full">
+                     <div id="initial-illustrations-carousel" class="relative" style="aspect-ratio: 1440/810">
+                        <img src="https://res.cloudinary.com/dlbnlilfj/image/upload/v1750020992/initial_explorations_rna0ra.webp" alt="Initial Explorations" class="carousel-slide absolute top-0 left-0 w-full h-full object-contain">
+                        <img src="https://res.cloudinary.com/dlbnlilfj/image/upload/v1750021044/round_2_bdhzew.webp" alt="Round 2" class="carousel-slide absolute top-0 left-0 w-full h-full object-contain opacity-0">
+                        <img src="https://res.cloudinary.com/dlbnlilfj/image/upload/v1750021058/color_studies_arekle.webp" alt="Color Studies" class="carousel-slide absolute top-0 left-0 w-full h-full object-contain opacity-0">
+                    </div>
+                </section>
+
+                <!-- Panel 10_new_text_panel -->
+                <section class="py-12 px-8">
+                     <p class="text-xl md:text-2xl font-light text-center max-w-3xl text-gray-800 leading-relaxed mx-auto">
+                       Through design sprints, close collaboration with the illustrator, and rapid prototyping, I helped bring the screensaver story to life and align leadership around the vision.
+                    </p>
+                </section>
+                
+                <!-- Panel 11_prototype_video -->
+                <section id="prototype-video-section">
+                     <video id="prototype-video" muted playsinline class="w-full h-auto">
+                        <source src="https://res.cloudinary.com/dlbnlilfj/video/upload/v1750034207/prototype_hrel1s.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </section>
+                
+                <!-- Panel 12_final_text -->
+                <section class="py-12 px-8">
+                     <p class="text-xl md:text-2xl font-light text-center max-w-3xl text-gray-800 leading-relaxed mx-auto">
+                       The result is part feature and part content that transformed a passive experience into an interactive iconic ad platform that has generated over 100M dollars in new ad revenue.
+                    </p>
+                </section>
+                
+                <!-- Panel 13_final_video -->
+                <section id="final-video-section" class="relative">
+                    <video id="final-video" autoplay loop muted playsinline class="w-full h-auto">
+                        <source src="https://res.cloudinary.com/dlbnlilfj/video/upload/v1750109384/ad_platform_success_vyblkj.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </section>
+
+                 <!-- Panel 14_new_text_panel -->
+                <section class="py-12 px-8">
+                     <p class="text-xl md:text-2xl font-light text-center max-w-3xl text-gray-800 leading-relaxed mx-auto">
+                       The Roku screensaver became a defining part of the Roku brand, prominently featured across the Roku campus, industry events, and TV shows. Building on its success, an entire ad platform was developed, integrating content and full thematic takeovers with ads, further driving revenue growth.
+                    </p>
+                </section>
+            </div>
+        </main>
+        
+        <footer class="relative h-20 w-full bg-black"></footer>
+    </div>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        function createCarousel(containerId) {
+            const section = document.getElementById(containerId);
+            if (!section) return;
+            
+            const carousel = section.querySelector('.carousel-slide') ? section.querySelector('div') : section;
+            
+            if (carousel) {
+                const slides = carousel.querySelectorAll('.carousel-slide');
+                if (slides.length === 0) return;
+                let currentSlide = 0;
+                let intervalId = null;
+
+                const showSlide = (index) => {
+                    slides.forEach((slide, i) => {
+                        slide.style.opacity = i === index ? '1' : '0';
+                    });
+                };
+
+                const startCarousel = () => {
+                    if (intervalId) return;
+                    showSlide(currentSlide);
+                    intervalId = setInterval(() => {
+                        currentSlide = (currentSlide + 1) % slides.length;
+                        showSlide(currentSlide);
+                    }, 4000); 
+                };
+
+                const stopCarousel = () => {
+                    clearInterval(intervalId);
+                    intervalId = null;
+                };
+
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            startCarousel();
+                        } else {
+                            stopCarousel();
+                        }
+                    });
+                }, { threshold: 0.1 }); 
+
+                observer.observe(section);
+            }
+        }
+
+        createCarousel('inspiration-section');
+        createCarousel('initial-illustrations-section');
+
+         // Autoplay video on scroll
+        function createVideoObserver(videoId) {
+            const video = document.getElementById(videoId);
+            if(video){
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.play();
+                        } else {
+                            entry.target.pause();
+                        }
+                    });
+                }, { threshold: 0.8 }); 
+                observer.observe(video);
+            }
+        }
+        
+        createVideoObserver('prototype-video');
+
+    });
+    </script>
+</body>
+</html>
